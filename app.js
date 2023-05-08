@@ -1,7 +1,7 @@
 const leftArrow = document.querySelector('.left-arrow-div');
 const rightArrow = document.querySelector('.right-arrow-div');
 
-leftArrow.addEventListener('click', moveLeft);
+leftArrow.addEventListener('click', moveLeft); 
 rightArrow.addEventListener('click', moveRight);
 
 function moveLeft() {
@@ -24,29 +24,27 @@ function readCount () {
   about2.style.display = 'block';
   aboutdiv.style.height = '900px';
   aboutdiv.style.transition = '9s ease-in-out'
-  counter += 1
 }  
 
 function readLess () {
   about2.style.display = 'none';
   aboutdiv.style.height = '625px';
   aboutdiv.style.transition = '9s ease-in-out'
-  counter += 1
 }
 
-more.addEventListener('click', function() {
-  if (counter % 2 == 0) {
-    readMore();
-  }
-  else if (counter % 2 != 0) {
-    readLess();
-  }
-  else {
-    console.log('Error. Remainder is: ', counter%2)
+function showMore() {
+  var more = document.getElementsByClassName('read-more')[0];
+  var about2 = document.getElementsByClassName('about-body-2')[0];
+  var aboutdiv = document.getElementsByClassName('about')[0];
+  if (about2.style.display === "none") {
+    about2.style.display = 'block';
+    aboutdiv.style.height = '900px';
+    aboutdiv.style.transition = '0.5s ease-in-out'
+  } else {
+    about2.style.display = 'none';
+    aboutdiv.style.height = '625px';
+    aboutdiv.style.transition = '0.5s ease-in-out'
   }
 }
-)
-
-
 
 
