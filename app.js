@@ -34,10 +34,19 @@ function readLess () {
   counter += 1
 }
 
-if (counter % 2 == 0)  {
-  readMore()
+more.addEventListener('click', function() {
+  if (counter % 2 == 0) {
+    readMore();
+  }
+  else if (counter % 2 != 0) {
+    readLess();
+  }
+  else {
+    console.log('Error. Remainder is: ', counter%2)
+  }
 }
-else if (counter % 2 != 0) {
-  readLess()
-}
+)
+
+
+
 
